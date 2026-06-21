@@ -11,6 +11,8 @@ namespace TinyRenderer {
     Vector3<float> pos;
 
   public:
+
+    Sphere();
   };
 
 }
