@@ -1,7 +1,11 @@
 #pragma once 
 
+#ifndef TYNYRENDERER_FILM_FILM_H
+#define TYNYRENDERER_FILM_FILM_H
+
 #include <tiny-renderer/math/point.h>
 #include <string>
+#include <memory>
 
 namespace TinyRenderer{ 
   struct Pixel {
@@ -18,3 +22,5 @@ namespace TinyRenderer{
     Film(const Point2<int>& res, const std::string &filename): resolution(res), filename(filename) {}
   };
 }
+
+#endif // TYNYRENDERER_FILM_FILM_H

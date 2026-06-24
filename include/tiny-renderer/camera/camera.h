@@ -11,6 +11,12 @@
 
 namespace TinyRenderer {
 
+  struct CameraSample {
+    Point2<double> pFilm; 
+    Point2<double> pLens;
+    double time;
+  };
+
   class Camera {
   private:
     Point3<double> pos;
@@ -19,7 +25,7 @@ namespace TinyRenderer {
   public:
     Camera(); 
     ~Camera();
-    Ray GenerateRay(int pixel_x, int pixel_y);
+    virtual double GenerateRay(CameraSample& sample, Ray* ray) const;
   };
 
 };

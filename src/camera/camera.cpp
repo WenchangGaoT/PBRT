@@ -2,7 +2,4 @@
 
 namespace TinyRenderer {
   
-  Camera::Camera() {
-
-  }
 }

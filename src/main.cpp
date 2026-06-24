@@ -8,9 +8,10 @@
 #include "tiny-renderer/scenes/scene.h"
 
 using namespace TinyRenderer;
+using namespace std;
 
 int main(int* argc, char** argv) {
-  Camera* canvas = new Camera();
-  Scene scene = Scene();
-  int **image;
+  Camera canvas; 
+  Scene scene;
+  return 0;
 }
