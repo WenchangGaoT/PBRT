@@ -1,7 +1,20 @@
 #pragma once 
 
-namespace TinyRenderer{ 
-  class Film {
+#include <tiny-renderer/math/point.h>
+#include <string>
 
+namespace TinyRenderer{ 
+  struct Pixel {
+    double xyz[3] = {0, 0, 0};
+  };
+
+  class Film {
+  private: 
+    const Point2<int> resolution; 
+    const std::string filename;
+    std::unique_ptr<Pixel[]> pixels;
+
+  public: 
+    Film(const Point2<int>& res, const std::string &filename): resolution(res), filename(filename) {}
   };
 }

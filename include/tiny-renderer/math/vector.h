@@ -1,9 +1,70 @@
 #pragma once
 
+#ifndef TINYRENDERER_MATH_VECTOR_H
+#define TINYRENDERER_MATH_VECTOR_H
+
 #include <cmath> 
 #include <cassert>
 
 namespace TinyRenderer {
+  template<typename T>
+  class Vector2 {
+  private:
+    T x, y;
+
+  public:
+    Vector2() {x = y = 0;}
+    Vector2(T x, T y): x(x), y(y){};
+
+    bool HasNans() const {
+      return std::isnan(x) || std::isnan(y);
+    }
+
+    T operator[](int i) const {
+      assert(0 <= i && i <= 1);
+      if (i == 0) return x;
+      if (i == 1) return y;
+      return y;
+    }
+    T &operator[](int i) {
+      assert(0 <= i && i <= 1);
+      if (i == 0) return x;
+      if (i == 1) return y;
+      return y;
+    }
+    Vector2<T> operator+(const Vector2<T> &v) const {
+      return Vector2<T>(x+v.x, y+v.y);
+    }
+    Vector2<T> &operator+=(const Vector2<T> &v) {
+      x += v.x; y += v.y;
+      return *this;
+    }
+    Vector2<T> operator*(const Vector2<T> &v) const {
+      return Vector2<T>(x*v.x, y*v.y);
+    }
+    Vector2<T> &operator*=(const Vector2<T> &v) {
+      x *= v.x; y *= v.y;
+      return *this;
+    }
+    Vector2<T> operator-(const Vector2<T> &v) const {
+      return Vector2<T>(x-v.x, y-v.y);
+    }
+    Vector2<T> &operator-=(const Vector2<T> &v) {
+      x -= v.x; y -= v.y;
+      return *this;
+    }
+    Vector2<T> operator/(const Vector2<T> &v) const {
+      return Vector2<T>(x/v.x, y/v.y);
+    }
+    Vector2<T> &operator/=(const Vector2<T> &v) {
+      x /= v.x; y /= v.y;
+      return *this;
+    }
+    Vector2<T> operator-() const {
+      return Vector2<T>(-x, -y);
+    }
+  };
+
 
   template<typename T>
   class Vector3 {
@@ -64,3 +125,5 @@ namespace TinyRenderer {
   };
 
 };
+
+#endif // TINYRENDERER_MATH_VECTOR_H

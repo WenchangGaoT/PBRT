@@ -1,5 +1,8 @@
 #pragma once 
 
+#ifndef TINYRENDERER_MATH_NORMAL_H
+#define TINYRENDERER_MATH_NORMAL_H
+
 #include <tiny-renderer/math/point.h>
 #include <tiny-renderer/math/vector.h>
 
@@ -15,3 +18,5 @@ namespace TinyRenderer {
   };
 
 }
+
+#endif // TINYRENDERER_MATH_NORMAL_H

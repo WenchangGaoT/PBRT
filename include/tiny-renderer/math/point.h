@@ -1,8 +1,39 @@
 #pragma once 
 
+#ifndef TINYRENDERER_MATH_POINT_H
+#define TINYRENDERER_MATH_POINT_H
+
 #include <tiny-renderer/math/vector.h>
 
 namespace TinyRenderer {
+  template <typename T>
+  class Point2 {
+  private:
+    T x, y;
+
+  public:
+    Point2() {x=y=0;}
+    Point2(T x, T y, T z): x(x), y(y) {}
+    Point2<T>  operator+(const Vector2<T> &v) const {
+      return Point2<T>(x + v.x, y + v.y);
+    }
+    Point2<T> &operator+=(const Vector2<T> &v) {
+      x += v.x; y += v.y;
+      return *this;
+    }
+    Point2<T>  operator-(const Vector2<T> &v) const {
+      return Point2<T>(x - v.x, y - v.y);
+    }
+    Point2<T> &operator-=(const Vector2<T> &v) {
+      x -= v.x; y -= v.y;
+      return *this;
+    }
+    Vector2<T> operator-(const Point2<T> &p) const {
+      return Vectore2<T>(x - p.x, y - p.y);
+    }
+  };
+
+
   template <typename T>
   class Point3 {
   private:
@@ -31,3 +62,5 @@ namespace TinyRenderer {
 
   };
 }
+
+#endif // TINYRENDERER_MATH_POINT_H
