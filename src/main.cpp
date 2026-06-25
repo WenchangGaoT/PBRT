@@ -5,7 +5,7 @@
 #include <iostream>
 #include "tiny-renderer/camera/camera.h"
 #include "tiny-renderer/film/film.h"
-#include "tiny-renderer/scenes/scene.h"
+#include "tiny-renderer/scene/scene.h"
 
 using namespace TinyRenderer;
 using namespace std;
