@@ -6,12 +6,22 @@
 #include "tiny-renderer/camera/camera.h"
 #include "tiny-renderer/film/film.h"
 #include "tiny-renderer/scene/scene.h"
+#include "tiny-renderer/shapes/shape.h"
+#include "tiny-renderer/shapes/sphere.h"
 
-using namespace TinyRenderer;
-using namespace std;
+int main(int argc, char** argv) {
+  (void) argc;
+  (void) argv;
 
-int main(int* argc, char** argv) {
-  Camera canvas; 
-  Scene scene;
+  TinyRenderer::Point3<double> p;
+  TinyRenderer::Point2<int> p2;
+  std::string of(argv[1]);
+  TinyRenderer::Camera camera(p, p2, of); 
+  TinyRenderer::Scene scene; 
+
+  // Rendering loop here
+  // TODO: Add this
+
+  camera.WriteImage();
   return 0;
 }

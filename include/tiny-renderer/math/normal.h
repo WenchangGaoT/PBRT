@@ -13,7 +13,8 @@ namespace TinyRenderer {
     T x, y, z;
 
   public:
-    explicit Normal3(const Vector3<T> &v): x(v.x), y(v.y), z(v.z) {}
+    explicit Normal3(const Vector3<T> &v): x(v[0]), y(v[1]), z(v[2]) {}
+    explicit Normal3(T x, T y, T z): x(x), y(y), z(z) {}
 
   };
 

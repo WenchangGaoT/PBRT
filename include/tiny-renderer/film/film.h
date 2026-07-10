@@ -6,6 +6,8 @@
 #include <tiny-renderer/math/point.h>
 #include <string>
 #include <memory>
+#include <fstream>
+#include <stdexcept>
 
 namespace TinyRenderer{ 
   struct Pixel {
@@ -20,7 +22,8 @@ namespace TinyRenderer{
 
   public: 
     Film(const Point2<int>& res, const std::string &filename): resolution(res), filename(filename) {}
-  };
+    virtual void WriteImage() const; 
+ };
 }
 
 #endif // TYNYRENDERER_FILM_FILM_H

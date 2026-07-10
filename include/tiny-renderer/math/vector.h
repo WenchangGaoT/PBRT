@@ -117,6 +117,9 @@ namespace TinyRenderer {
     Vector3<T> operator*(const Vector3<T> &v) const {
       return Vector3<T>(x*v.x, y*v.y, z*v.z);
     }
+    Vector3<T> operator*(const double t) const {
+      return Vector3<T>(t*x, t*y, t*z);
+    }
     Vector3<T> &operator*=(const Vector3<T> &v) {
       x *= v.x; y *= v.y; z *= v.z;
       return *this;

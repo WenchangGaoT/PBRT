@@ -8,6 +8,7 @@
 #include <tiny-renderer/math/point.h>
 #include <tiny-renderer/math/ray.h>
 #include <tiny-renderer/film/film.h>
+#include <string>
 
 namespace TinyRenderer {
 
@@ -24,8 +25,10 @@ namespace TinyRenderer {
   
   public:
     Camera(); 
+    Camera(const Point3<double>& p, const Point2<int>& res, const std::string& of); 
     ~Camera();
     virtual double GenerateRay(CameraSample& sample, Ray* ray) const;
+    virtual void WriteImage() const;
   };
 
 };

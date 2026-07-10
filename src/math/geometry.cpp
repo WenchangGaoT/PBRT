@@ -1,4 +1,5 @@
 #include <tiny-renderer/math/geometry.h>
+#include <algorithm>
 
 namespace TinyRenderer {
   template <typename T> inline Vector3<T> Normalize(Vector3<T> &v) {

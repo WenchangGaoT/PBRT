@@ -4,6 +4,7 @@
 #define TINYRENDERER_MATH_POINT_H
 
 #include <tiny-renderer/math/vector.h>
+#include <cassert>
 
 namespace TinyRenderer {
   template <typename T>
@@ -13,7 +14,12 @@ namespace TinyRenderer {
 
   public:
     Point2() {x=y=0;}
-    Point2(T x, T y, T z): x(x), y(y) {}
+    Point2(T x, T y): x(x), y(y) {}
+    T operator[](int i) const {
+      assert(0 <= i && i <= 1);
+      if (i == 0) return x;
+      return y;
+    }
     Point2<T>  operator+(const Vector2<T> &v) const {
       return Point2<T>(x + v.x, y + v.y);
     }
@@ -29,35 +35,33 @@ namespace TinyRenderer {
       return *this;
     }
     Vector2<T> operator-(const Point2<T> &p) const {
-      return Vectore2<T>(x - p.x, y - p.y);
+      return Vector2<T>(x - p.x, y - p.y);
     }
   };
 
 
   template <typename T>
   class Point3 {
-  private:
-    T x, y, z;
-
   public:
+    T x, y, z;
     Point3() {x=y=z=0;}
     Point3(T x, T y, T z): x(x), y(y), z(z) {}
     Point3<T>  operator+(const Vector3<T> &v) const {
-      return Point3<T>(x + v.x, y + v.y, z + v.z);
+      return Point3<T>(x + v[0], y + v[1], z + v[2]);
     }
     Point3<T> &operator+=(const Vector3<T> &v) {
-      x += v.x; y += v.y; z += v.z;
+      x += v[0]; y += v[1]; z += v[2];
       return *this;
     }
     Point3<T>  operator-(const Vector3<T> &v) const {
-      return Point3<T>(x - v.x, y - v.y, z - v.z);
+      return Point3<T>(x - v[0], y - v[1], z - v[2]);
     }
     Point3<T> &operator-=(const Vector3<T> &v) {
-      x -= v.x; y -= v.y; z -= v.z;
+      x -= v[0]; y -= v[1]; z -= v[2];
       return *this;
     }
     Vector3<T> operator-(const Point3<T> &p) const {
-      return Vectore3<T>(x - p.x, y - p.y, z - p.z);
+      return Vector3<T>(x - p.x, y - p.y, z - p.z);
     }
 
   };
