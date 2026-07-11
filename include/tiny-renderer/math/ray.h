@@ -28,6 +28,12 @@ namespace TinyRenderer {
       Vector3<double> GetDirection() const {
         return dir;
       }
+      void SetPosition(const Point3<double>& p) {
+        pos = p;
+      }
+      void SetDirection(const Vector3<double>& d) {
+        dir = d;
+      }
 
   };
 }

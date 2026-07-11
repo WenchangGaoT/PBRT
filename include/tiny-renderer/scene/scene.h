@@ -11,9 +11,10 @@
 namespace TinyRenderer {
   class Scene {
   public:
-    std::vector<Shape> aggregate;
+    std::vector<std::shared_ptr<Shape>> aggregate;
     std::vector<std::shared_ptr<Light>> light;
-    void AddObject(const Shape& obj);
+    void AddObject(const std::shared_ptr<Shape>& obj);
+    bool Intersect(const Ray*, SurfaceInteraction*) const;
   };
 }
 

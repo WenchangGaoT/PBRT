@@ -12,6 +12,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 set(TINY_RENDERER_SOURCES
     src/camera/camera.cpp
+    src/camera/pinhole_camera.cpp
     src/film/film.cpp
     src/math/geometry.cpp
     src/scene/scene.cpp

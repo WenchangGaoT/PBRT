@@ -4,10 +4,11 @@
 #define TINYRENDERER_PRIMITIVE_PRIMITIVE_H
 
 #include <tiny-renderer/shapes/shape.h>
+#include <memory>
 
 namespace TinyRenderer {
   class Primitive {
-    Shape shape;
+    std::shared_ptr<Shape[]> shapes;
 
   };
 }
