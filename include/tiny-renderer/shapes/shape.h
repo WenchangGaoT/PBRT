@@ -12,7 +12,7 @@ namespace TinyRenderer {
     Normal3<double> n; 
     double t;
 
-    SurfaceInteraction(): pos(0, 0, 0), n(0, 0, 0), t(0) {}
+    SurfaceInteraction(): pos(0, 0, 0), n(0, 0, 0), t(INFINITY) {}
     SurfaceInteraction(const Point3<double> &p, const Normal3<double> &n, const double &t):
       pos(p), n(n), t(t) {}
 

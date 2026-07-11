@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
   (void) argv;
 
   TinyRenderer::Point3<double> p;
-  TinyRenderer::Point2<int> resolution(480, 480);
+  TinyRenderer::Point2<int> resolution(1024, 1024);
   std::string of(argv[1]);
   TinyRenderer::PinholeCamera camera(1, 1, p, resolution, of); 
   TinyRenderer::Scene scene; 

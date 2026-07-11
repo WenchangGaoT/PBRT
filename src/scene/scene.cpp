@@ -8,7 +8,12 @@ namespace TinyRenderer {
   bool Scene::Intersect(const Ray* ray, SurfaceInteraction* hit) const {
     bool intersected = false;
     for(const auto& o: aggregate) {
-      intersected = intersected || o->Intersect(ray, hit);
+      SurfaceInteraction localHit;
+      if (o->Intersect(ray, &localHit)) {
+        intersected = true;
+        if (localHit.t < hit->t) // make sure the hit is the closest hit
+          *hit = localHit;
+      }
     }
     return intersected;
   }
