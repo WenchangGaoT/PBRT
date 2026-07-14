@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/wenchanggao/projects/PBRT/build-asan/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
