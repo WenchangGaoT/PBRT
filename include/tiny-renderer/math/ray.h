@@ -28,6 +28,9 @@ namespace TinyRenderer {
       Vector3<double> GetDirection() const {
         return dir;
       }
+      double GetMaxT() const {
+        return maxT;
+      }
       void SetPosition(const Point3<double>& p) {
         pos = p;
       }

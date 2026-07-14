@@ -1,0 +1,4 @@
+/Users/wenchanggao/projects/PBRT/build-asan/CMakeFiles/tiny-renderer-objects.dir
+/Users/wenchanggao/projects/PBRT/build-asan/CMakeFiles/tiny-renderer.dir
+/Users/wenchanggao/projects/PBRT/build-asan/CMakeFiles/edit_cache.dir
+/Users/wenchanggao/projects/PBRT/build-asan/CMakeFiles/rebuild_cache.dir

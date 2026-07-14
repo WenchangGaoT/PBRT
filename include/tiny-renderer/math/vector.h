@@ -105,6 +105,10 @@ namespace TinyRenderer {
       if (i == 1) return y;
       return z;
     }
+    Vector3<T> Normalize() const {
+      double length = Length();
+      return Vector3<T>(x / length, y / length, z / length);
+    }
 
     // operations
     Vector3<T> operator+(const Vector3<T> &v) const {
@@ -147,7 +151,7 @@ namespace TinyRenderer {
     Vector3 Cross(const Vector3<T> &v) const {
       double v1x = x, v1y = y, v1z = z; 
       double v2x = v.x, v2y = v.y, v2z = v.z;
-      return Vector3<T>(v1y*v2z-v1z*v2y, v1x*v2z-v2x*v1z, v1x*v2y-v1y*v2x);
+      return Vector3<T>(v1y*v2z-v1z*v2y, -v1x*v2z+v2x*v1z, v1x*v2y-v1y*v2x);
     }
   };
 };

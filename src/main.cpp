@@ -13,22 +13,27 @@
 #include "tiny-renderer/shapes/sphere.h"
 
 int main(int argc, char** argv) {
-  (void) argc;
-  (void) argv;
 
   TinyRenderer::Point3<double> p;
   TinyRenderer::Point2<int> resolution(1024, 1024);
-  std::string of(argv[1]);
-  TinyRenderer::PinholeCamera camera(1, 1, p, resolution, of); 
+
+  TinyRenderer::CameraInitPose cip(
+    TinyRenderer::Point3<double>(0.1, 0.1, 0.1),
+    TinyRenderer::Vector3<double>(0, 0, 1), 
+    TinyRenderer::Vector3<double>(0, 1, 0)
+  );
+  TinyRenderer::FilmInitParams fip(
+    TinyRenderer::Point2<int>(1024, 1024), 
+    std::string("outputs/test2.ppm")
+  );
+
+  TinyRenderer::PinholeCamera camera(cip, fip, 1, 1); 
   TinyRenderer::Scene scene; 
   scene.AddObject(
     std::make_shared<TinyRenderer::Sphere>(
       TinyRenderer::Sphere(TinyRenderer::Point3<double>(0, 0, 0.5), 0.2)
     )
   );
-
-  // Rendering loop here
-  // TODO: Add this
 
   camera.Render(scene);
   camera.WriteImage();

@@ -10,6 +10,14 @@
 #include <stdexcept>
 
 namespace TinyRenderer{ 
+  struct FilmInitParams {
+    Point2<int> resolution; 
+    std::string outFile;
+
+    FilmInitParams(const Point2<int> r, const std::string& o):
+    resolution(r), outFile(o) {}
+  };
+
   struct Pixel {
     double xyz[3] = {0, 0, 0};
 
@@ -36,6 +44,9 @@ namespace TinyRenderer{
   public: 
     Film(const Point2<int>& res, const std::string &filename):
       resolution(res), filename(filename), pixels(std::make_unique<Pixel[]>(res[0] * res[1])) {}
+    Film(const FilmInitParams& fip): resolution(fip.resolution), filename(fip.outFile) {
+      pixels = std::make_unique<Pixel[]>(fip.resolution[0] * fip.resolution[1]);
+    }
     Point2<int> GetResolution() const;
     virtual void WriteImage() const; 
     virtual void SetPixel(const Point2<int>&, const Pixel&);

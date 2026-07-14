@@ -15,11 +15,6 @@ namespace TinyRenderer {
   public:
     Point2() {x=y=0;}
     Point2(T x, T y): x(x), y(y) {}
-    T operator[](int i) const {
-      assert(0 <= i && i <= 1);
-      if (i == 0) return x;
-      return y;
-    }
     Point2<T>  operator+(const Vector2<T> &v) const {
       return Point2<T>(x + v.x, y + v.y);
     }
@@ -36,6 +31,19 @@ namespace TinyRenderer {
     }
     Vector2<T> operator-(const Point2<T> &p) const {
       return Vector2<T>(x - p.x, y - p.y);
+    }
+    T operator[](int i) const {
+      assert(0 <= i && i <= 1);
+      if (i == 0) return x;
+      return y;
+    }
+    T &operator[](int i) {
+      assert(0 <= i && i <= 1);
+      if (i == 0) return x;
+      return y;
+    }
+    Point2<T> operator-() const {
+      return Point2<T>(-x, -y);
     }
   };
 
@@ -62,6 +70,21 @@ namespace TinyRenderer {
     }
     Vector3<T> operator-(const Point3<T> &p) const {
       return Vector3<T>(x - p.x, y - p.y, z - p.z);
+    }
+    Point3<T> operator-() const {
+      return Point3<T>(-x, -y, -z);
+    }
+    T operator[](int i) const {
+      assert(0 <= i && i <= 2);
+      if (i == 0) return x;
+      if (i == 1) return y;
+      return z;
+    }
+    T &operator[](int i) {
+      assert(0 <= i && i <= 2);
+      if (i == 0) return x;
+      if (i == 1) return y;
+      return z;
     }
 
   };
