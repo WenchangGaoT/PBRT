@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/wgao/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer.dir/src/main.cpp.o -c /home/wgao/projects/PBRT/src/main.cpp",
+  "file": "/home/wgao/projects/PBRT/src/main.cpp",
+  "output": "CMakeFiles/tiny-renderer.dir/src/main.cpp.o"
+}
+]
