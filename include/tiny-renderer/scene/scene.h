@@ -16,6 +16,8 @@ namespace TinyRenderer {
     void AddObject(const std::shared_ptr<Shape>& obj);
     bool Intersect(const Ray*, SurfaceInteraction*) const;
   };
+
+  
 }
 
 #endif // TINYRENDERER_SCENES_SCENE_H

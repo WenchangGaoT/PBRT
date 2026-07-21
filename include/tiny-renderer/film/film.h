@@ -37,8 +37,8 @@ namespace TinyRenderer{
 
   class Film {
   private: 
-    const Point2<int> resolution; 
-    const std::string filename;
+    Point2<int> resolution; 
+    std::string filename;
     std::unique_ptr<Pixel[]> pixels;
 
   public: 
@@ -48,6 +48,8 @@ namespace TinyRenderer{
       pixels = std::make_unique<Pixel[]>(fip.resolution[0] * fip.resolution[1]);
     }
     Point2<int> GetResolution() const;
+    void SetResolution(const Point2<int>&);
+    void SetOutputFile(const std::string&);
     virtual void WriteImage() const; 
     virtual void SetPixel(const Point2<int>&, const Pixel&);
  };

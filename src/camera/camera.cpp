@@ -12,11 +12,15 @@ namespace TinyRenderer {
     const Point2<int>& res, const std::string& of) {
     GetCameraTransform(p, lookat, y, &CameraFromWorld, &WorldFromCamera);
     film = new Film(res, of);
+    // film->SetResolution(res);
+    // film->SetOutputFile(of);
   }
 
   Camera::Camera(const CameraInitPose& cip, const FilmInitParams& fip) {
     GetCameraTransform(cip.pWorld, cip.zWorld, cip.yWorld, &CameraFromWorld, &WorldFromCamera);
     film = new Film(fip.resolution, fip.outFile);
+    // film->SetResolution(fip.resolution);
+    // film->SetOutputFile(fip.outFile);
   }
 
   void GetCameraTransform(const Point3<double>& p, const Vector3<double>& z, const Vector3<double>& y,

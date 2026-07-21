@@ -10,6 +10,7 @@ namespace TinyRenderer {
     this->filmWidth = filmWidth; 
     this->filmHeight = filmHeight;
   }
+
   double PinholeCamera::GenerateRay(CameraSample& cSample, Ray* ray) const {
     ray->SetPosition(Point3<double>(0, 0, 0));
     Point2<double> pFilm = cSample.pFilm;

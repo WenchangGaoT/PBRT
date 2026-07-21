@@ -11,6 +11,8 @@
 #include <tiny-renderer/scene/scene.h>
 #include <tiny-renderer/math/matrix.h>
 #include <string>
+#include <memory>
+#include <nlohmann/json.hpp>
 
 namespace TinyRenderer {
 
@@ -21,9 +23,9 @@ namespace TinyRenderer {
   };
 
   struct CameraInitPose {
-    Point3<double> pWorld; 
-    Vector3<double> zWorld;
-    Vector3<double> yWorld;
+    Point3<double> pWorld; // Location of camera in world space
+    Vector3<double> zWorld; // Camera z-axis in world space
+    Vector3<double> yWorld; // Camera y-axis in world space
 
     CameraInitPose(const Point3<double>& p, const Vector3<double> z, const Vector3<double> y):
     pWorld(p), zWorld(z), yWorld(y) {}
@@ -32,7 +34,7 @@ namespace TinyRenderer {
   class Camera {
   public:
     Point3<double> pos;
-    Film* film;
+    Film* film = nullptr;
     Transform CameraFromWorld, WorldFromCamera;
 
     Camera(); 
@@ -41,10 +43,24 @@ namespace TinyRenderer {
            const Point2<int>& res, const std::string& of); 
     Camera(const CameraInitPose&, const FilmInitParams&);
     virtual ~Camera();
+    Camera(const Camera&) = delete;
+    Camera& operator=(const Camera&) = delete;
     virtual double GenerateRay(CameraSample& sample, Ray* ray) const;
     virtual void WriteImage() const;
     virtual void Render(Scene&);
   };
+
+  enum class CameraType {
+    Invalid = 0,
+    Pinhole = 1 << 0,
+    Orthographic = 1 << 1,
+  };
+
+  NLOHMANN_JSON_SERIALIZE_ENUM(CameraType, {
+    {CameraType::Invalid, "invalid"}, 
+    {CameraType::Pinhole, "pinhole"}, 
+    {CameraType::Orthographic, "orthographic"},
+  })
 
   void GetCameraTransform(const Point3<double>& p, const Vector3<double>& z, const Vector3<double>& y, Transform*, Transform*); 
 };

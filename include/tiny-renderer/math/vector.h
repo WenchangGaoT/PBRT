@@ -5,14 +5,13 @@
 
 #include <cmath> 
 #include <cassert>
+#include <nlohmann/json.hpp>
 
 namespace TinyRenderer {
   template<typename T>
   class Vector2 {
-  private:
-    T x, y;
-
   public:
+    T x, y;
     Vector2() {x = y = 0;}
     Vector2(T x, T y): x(x), y(y){};
 
@@ -74,10 +73,9 @@ namespace TinyRenderer {
 
   template<typename T>
   class Vector3 {
-  private:
+  public:
     T x, y, z; 
 
-  public:
     Vector3() {x = y = z = 0;}
     Vector3(T x, T y, T z): x(x), y(y), z(z){};
 
@@ -154,6 +152,25 @@ namespace TinyRenderer {
       return Vector3<T>(v1y*v2z-v1z*v2y, -v1x*v2z+v2x*v1z, v1x*v2y-v1y*v2x);
     }
   };
+
+  template <typename T>
+  void from_json(const nlohmann::json& vJson, Vector2<T>& p) {
+    if (!vJson.is_array() || vJson.size() != 2) {
+      throw std::runtime_error("Vector3 must bu an array of three numbers");
+    }
+    vJson.at(0).get_to(p.x);
+    vJson.at(1).get_to(p.y);
+  }
+
+  template <typename T>
+  void from_json(const nlohmann::json& vJson, Vector3<T>& p) {
+    if (!vJson.is_array() || vJson.size() != 3) {
+      throw std::runtime_error("Vector3 must bu an array of three numbers");
+    }
+    vJson.at(0).get_to(p.x);
+    vJson.at(1).get_to(p.y);
+    vJson.at(2).get_to(p.z);
+  }
 };
 
 #endif // TINYRENDERER_MATH_VECTOR_H

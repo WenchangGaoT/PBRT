@@ -1,7 +1,31 @@
 #include "tiny-renderer/film/film.h"
 
+#include <filesystem>
+
 namespace TinyRenderer {
+  void Film::SetResolution(const Point2<int>& res) {
+    this->resolution = res;
+  }
+
+  void Film::SetOutputFile(const std::string& o) {
+    this->filename = o;
+  }
+
   void Film::WriteImage() const{
+    const std::filesystem::path outputPath(filename);
+    const std::filesystem::path outputDirectory = outputPath.parent_path();
+
+    if (!outputDirectory.empty()) {
+      std::error_code error;
+      std::filesystem::create_directories(outputDirectory, error);
+      if (error) {
+        throw std::runtime_error(
+          "Failed to create output directory " + outputDirectory.string() +
+          ": " + error.message()
+        );
+      }
+    }
+
     std::ofstream out(filename);
     if (!out) {
       throw std::runtime_error("Failed to open output image file: " + filename);

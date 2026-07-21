@@ -5,11 +5,12 @@
 
 #include <tiny-renderer/math/vector.h>
 #include <cassert>
+#include <nlohmann/json.hpp>
 
 namespace TinyRenderer {
   template <typename T>
   class Point2 {
-  private:
+  public:
     T x, y;
 
   public:
@@ -86,8 +87,26 @@ namespace TinyRenderer {
       if (i == 1) return y;
       return z;
     }
-
   };
+
+  template <typename T>
+  void from_json(const nlohmann::json& vJson, Point2<T>& p) {
+    if (!vJson.is_array() || vJson.size() != 2) {
+      throw std::runtime_error("Point3 must bu an array of three numbers");
+    }
+    vJson.at(0).get_to(p.x);
+    vJson.at(1).get_to(p.y);
+  }
+
+  template <typename T>
+  void from_json(const nlohmann::json& vJson, Point3<T>& p) {
+    if (!vJson.is_array() || vJson.size() != 3) {
+      throw std::runtime_error("Point3 must bu an array of three numbers");
+    }
+    vJson.at(0).get_to(p.x);
+    vJson.at(1).get_to(p.y);
+    vJson.at(2).get_to(p.z);
+  }
 }
 
 #endif // TINYRENDERER_MATH_POINT_H

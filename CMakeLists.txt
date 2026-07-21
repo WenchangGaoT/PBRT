@@ -8,9 +8,24 @@ project(tiny-renderer
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# include(FetchContent)
+
+# FetchContent_Declare(
+#     nlohmann_json
+#     GIT_REPOSITORY https://github.com/nlohmann/json.git
+#     GIT_TAG v3.12.0
+# )
+
+# FetchContent_MakeAvailable(nlohmann_json)
+
+find_package(nlohmann_json CONFIG REQUIRED)
 
 set(TINY_RENDERER_SOURCES
+    src/parser/parser.cpp
     src/camera/camera.cpp
     src/camera/pinhole_camera.cpp
     src/film/film.cpp
@@ -29,6 +44,11 @@ target_include_directories(tiny-renderer-objects
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+target_link_libraries(tiny-renderer-objects
+    PRIVATE
+        nlohmann_json::nlohmann_json
+)
+
 target_compile_options(tiny-renderer-objects
     PRIVATE
         -Wall
@@ -36,6 +56,9 @@ target_compile_options(tiny-renderer-objects
         -Wpedantic
 )
 
-add_executable(tiny-renderer
-    $<TARGET_OBJECTS:tiny-renderer-objects>
+add_executable(tiny-renderer)
+
+target_link_libraries(tiny-renderer
+    PRIVATE
+        tiny-renderer-objects
 )
