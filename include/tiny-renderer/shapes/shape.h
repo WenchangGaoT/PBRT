@@ -33,6 +33,16 @@ namespace TinyRenderer {
     virtual bool Intersect(const Ray* ray, SurfaceInteraction* hit) const = 0;
     static std::shared_ptr<Shape> InstantiateShape(const nlohmann::json&);
   };
+
+  enum class ShapeType {
+    Invalid = 0,
+    Sphere = 1,
+  };
+
+  NLOHMANN_JSON_SERIALIZE_ENUM(ShapeType, {
+    {ShapeType::Invalid, "unknown"}, 
+    {ShapeType::Sphere, "sphere"},
+  })
 };
 
 #endif // TINYRENDERER_SHAPES_SHAPE_H

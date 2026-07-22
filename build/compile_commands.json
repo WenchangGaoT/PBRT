@@ -1,50 +1,50 @@
 [
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/parser/parser.cpp.o -c /Users/wenchanggao/projects/PBRT/src/parser/parser.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/parser/parser.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/parser/parser.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/parser/parser.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/parser/parser.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/parser/parser.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/camera/camera.cpp.o -c /Users/wenchanggao/projects/PBRT/src/camera/camera.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/camera/camera.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/camera/camera.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/camera/camera.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/camera/camera.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/camera/camera.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/camera/pinhole_camera.cpp.o -c /Users/wenchanggao/projects/PBRT/src/camera/pinhole_camera.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/camera/pinhole_camera.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/camera/pinhole_camera.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/camera/pinhole_camera.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/camera/pinhole_camera.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/camera/pinhole_camera.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/film/film.cpp.o -c /Users/wenchanggao/projects/PBRT/src/film/film.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/film/film.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/film/film.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/film/film.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/film/film.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/film/film.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/math/geometry.cpp.o -c /Users/wenchanggao/projects/PBRT/src/math/geometry.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/math/geometry.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/math/geometry.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/math/geometry.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/math/geometry.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/math/geometry.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/scene/scene.cpp.o -c /Users/wenchanggao/projects/PBRT/src/scene/scene.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/scene/scene.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/scene/scene.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/scene/scene.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/scene/scene.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/scene/scene.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/shapes/sphere.cpp.o -c /Users/wenchanggao/projects/PBRT/src/shapes/sphere.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/shapes/sphere.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/shapes/sphere.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/shapes/sphere.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/shapes/sphere.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/shapes/sphere.cpp.o"
 },
 {
-  "directory": "/Users/wenchanggao/projects/PBRT/build",
-  "command": "/usr/bin/c++  -I/Users/wenchanggao/projects/PBRT/include -isystem /opt/homebrew/include -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/main.cpp.o -c /Users/wenchanggao/projects/PBRT/src/main.cpp",
-  "file": "/Users/wenchanggao/projects/PBRT/src/main.cpp",
+  "directory": "/home/wgao-lumos-24/projects/PBRT/build",
+  "command": "/usr/bin/c++  -I/home/wgao-lumos-24/projects/PBRT/include -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/tiny-renderer-objects.dir/src/main.cpp.o -c /home/wgao-lumos-24/projects/PBRT/src/main.cpp",
+  "file": "/home/wgao-lumos-24/projects/PBRT/src/main.cpp",
   "output": "CMakeFiles/tiny-renderer-objects.dir/src/main.cpp.o"
 }
 ]

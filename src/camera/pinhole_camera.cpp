@@ -36,7 +36,6 @@ namespace TinyRenderer {
         SurfaceInteraction hit;
         bool intersected = scene.Intersect(&ray, &hit);
         if (intersected) {
-          std::cout << hit.t << std::endl;
           film->SetPixel(Point2<int>(i, j), Pixel({255, 255, 255}));
         }
       }

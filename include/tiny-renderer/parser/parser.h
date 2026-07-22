@@ -13,6 +13,7 @@
 #include <tiny-renderer/scene/scene.h>
 #include <tiny-renderer/math/point.h>
 #include <tiny-renderer/math/vector.h>
+#include <tiny-renderer/shapes/sphere.h>
 
 namespace TinyRenderer {
   class Parser {
@@ -27,6 +28,13 @@ namespace TinyRenderer {
     void SetCameras(const nlohmann::json&, std::vector<std::shared_ptr<Camera>>&) const;
     void SetScene(const nlohmann::json&, Scene&) const;
     std::shared_ptr<Camera> InstantiateCamera(const nlohmann::json&) const;
+    std::shared_ptr<Shape> InstantiateShape(const nlohmann::json&) const;
+
+    // Cameras
+    std::shared_ptr<PinholeCamera> InstantiatePinholeCamera(const nlohmann::json&) const;
+
+    // Shapes
+    std::shared_ptr<Sphere> InstantiateSphere(const nlohmann::json&) const;
   };
 }
 
